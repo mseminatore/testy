@@ -13,6 +13,9 @@
 // screen control
 #define ESC "\x1b"
 #define TERM_CLEAR ESC "[2J" ESC "[H"
+#define TERM_BOLD ESC "[1m"
+#define TERM_UNDERLINE ESC "[4m"
+#define TERM_BLINK ESC "[5m"
 
 // text colors
 #define TERM_RESET ESC "[0m"
@@ -35,14 +38,14 @@
 
 #ifdef _WIN32
 #   define CHECK_MARK TERM_GREEN "\xFB" TERM_RESET
-#   define X_MARK TERM_RED "X" TERM_RESET
+#   define X_MARK TERM_BRIGHT_RED "X" TERM_RESET
 #else
 #   define CHECK_MARK TERM_GREEN "\u2713" TERM_RESET
-#   define X_MARK TERM_RED "\u274C" TERM_RESET
+#   define X_MARK TERM_BRIGHT_RED "\u274C" TERM_RESET
 #endif
 
 #if 1
-#   define TEST_ASSERT(expr, f, l) if ((expr)) { puts(CHECK_MARK);} else { puts(X_MARK); test_failures++; printf("\tTest %sfailed%s at [%s%s:%d%s]\n", TERM_RED, TERM_RESET, TERM_RED, (f), (l), TERM_RESET); } 
+#   define TEST_ASSERT(expr, f, l) if ((expr)) { puts(CHECK_MARK);} else { puts(X_MARK); test_failures++; printf("\tTest %sfailed%s at [%s%s:%d%s]\n", TERM_BRIGHT_RED, TERM_RESET, TERM_BRIGHT_RED, (f), (l), TERM_RESET); } 
 #else
 #   define TEST_ASSERT(expr) assert(expr); printf(CHECK_MARK); putchar('\n')
 #endif
@@ -50,6 +53,8 @@
 // simple test harness
 #define BEGIN_TESTS()   printf("%sBegin test pass%s...\n", TERM_BRIGHT_MAGENTA, TERM_RESET)
 #define TEST(s)         printf("\t%d test case: %s" #s "%s ", ++test_number, TERM_CYAN, TERM_RESET); TEST_ASSERT(s, __FILE__, __LINE__)
+#define TESTEX(msg,s)   printf("\t%d test case: %s" msg "%s ", ++test_number, TERM_CYAN, TERM_RESET); TEST_ASSERT(s, __FILE__, __LINE__)
+#define COMMENT(s)      printf("\t%s" s "%s\n", TERM_BRIGHT_BLUE, TERM_RESET)
 #define SUITE(s)        printf("\nTesting suite %s" s "%s...\n", TERM_YELLOW, TERM_RESET); test_suites++
 #define MODULE(s)       printf("\nModule %s" s "%s...\n", TERM_BRIGHT_MAGENTA, TERM_RESET); test_modules++
 #define END_TESTS()     printf("\n%sTest pass completed%s.\nEvaluated %s%d%s modules, %s%d%s suites, and %s%d%s tests with %s%d%s failed test case(s).\n\n", TERM_BRIGHT_MAGENTA, TERM_RESET, TERM_GREEN, test_modules, TERM_RESET, TERM_GREEN, test_suites, TERM_RESET, TERM_GREEN, test_number, TERM_RESET, test_failures ? TERM_BRIGHT_RED : TERM_GREEN, test_failures, TERM_RESET); return test_failures
