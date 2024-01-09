@@ -34,16 +34,22 @@ EQUAL_ARRAY(a, b) | tests for equality of two arrays using memcmp
 NOT_EQUAL_ARRAY(a, b) | tests for inequality of two arrays
 EQUAL_EPSILON(a, b) | tests that fabs(a - b) > epsilon
 
-Here is a minimalist example of usage:
+Below is a minimalist example of usage:
 
 ```c
 #include "test.h"
 
 int test_main(int argc, char *argv[]) {
+    // define a module
     MODULE("Sample test");
 
+    // define a test suite
     SUITE("Basic");
 
+    // display a comment
+    COMMENT("test addition...");
+
+    // execute a unit test
     TEST(((1 + 1) == 2));
 
     return 0;
@@ -62,13 +68,14 @@ Begin test pass...
 Module Sample test...
 
 Testing suite Basic...
+    test addition...
 	1 test case: ((1 + 1) == 2) ✓
 
 Test pass completed.
 Evaluated 1 modules, 1 suites, and 1 tests with 0 failed test case(s).
 ```
 
-# testy is compatible with CTEST and Github CI
+# testy is compatible with CMake/CTest and Github CI
 
 The library returns 0 on a successful test pass. On a test case failure it
 returns the number of failures. These simple steps allow for tests to be run by
