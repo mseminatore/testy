@@ -18,9 +18,10 @@ the hopes that it may be useful to others.
 
 Integrating and using testy is meant to be very simple. There is only one 
 header file to include `test.h` in your project. And there is only one C file
-to add to your project `test_main.c`.
+to add to your project `test_main.c`. The `main()` function is implemented in
+`test_main.c` and calls your code which starts with `test_main()`.
 
-The test framework provides a
+The test framework provides a number of simple but useful macros. They are:
 
 Macro | Description
 ----- | -----------
@@ -48,6 +49,11 @@ int test_main(int argc, char *argv[]) {
     return 0;
 }
 
+```
+
+And here is sample output from running the example above.
+
+```
 ```
 
 # testy is compatible with CTEST and Github CI
