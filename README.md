@@ -51,9 +51,21 @@ int test_main(int argc, char *argv[]) {
 
 ```
 
-And here is sample output from running the example above.
+And here is sample output from running the example above. 
+
+> If your console supports VT100 terminal congtrol escape sequences then the 
+> output will use color highlighting.
 
 ```
+Begin test pass...
+
+Module Sample test...
+
+Testing suite Basic...
+	1 test case: ((1 + 1) == 2) ✓
+
+Test pass completed.
+Evaluated 1 modules, 1 suites, and 1 tests with 0 failed test case(s).
 ```
 
 # testy is compatible with CTEST and Github CI
