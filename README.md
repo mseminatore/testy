@@ -1,18 +1,22 @@
 # testy is a simple test framework
 
-As a software developer I knew little about test frameworks. Like many 
-developers I all too often relied on others to test my code. These days I have
-many projects which I revisit periodically. In order to minimize the chances of
-introducing new bugs into old code bases I wanted the ability to build up a
-collection of unit tests.
+As a software developer I found that I knew little about test frameworks. 
+Like many developers I all too often relied on others to test my code.
+I have many projects which I revisit periodically. In order to minimize the
+chances of introducing new bugs into old code bases I decided that I needed
+to build up a collection of unit tests.
 
-To do so, I needed to learn about Unit testing. I explored many of the available
-testing frameworks. What I found was that, while very capable, many were much
-larger and more complex than my simple and straightforward needs.
+To do that, I needed to learn about Unit testing and choose a framework. I
+explored many of the available testing frameworks. What I found was that, 
+while very capable, many were much larger and more complex than my simple and
+straightforward needs.
 
-This framework attempts to provide a reasonable balance between functionality
-and complexity. I've used this now for several projects and am sharing it in 
-the hopes that it may be useful to others.
+The `testy` framework attempts to offer a reasonable balance between 
+testing functionality and complexity. I've used this now for several projects
+and am sharing it in the hopes that it may be useful to others.
+
+> Note: If your console supports VT100 terminal congtrol escape sequences then the 
+> output will use color highlighting.
 
 # testy examples
 
@@ -57,9 +61,6 @@ void test_main(int argc, char *argv[]) {
 ```
 
 And here is sample output from running the example above. 
-
-> If your console supports VT100 terminal congtrol escape sequences then the 
-> output will use color highlighting.
 
 ```
 Begin test pass...
