@@ -8,7 +8,8 @@
 #ifndef __TEST_H
 #define __TEST_H
 
-#include "assert.h"
+#include <assert.h>
+#include <stdio.h>
 
 // screen control
 #define ESC "\x1b"
@@ -85,6 +86,6 @@ extern int test_suites;
 extern int test_failures;
 extern int test_modules;
 
-int test_main(int argc, char* argv[]);
+void test_main(int argc, char* argv[]);
 
 #endif // #ifndef __TEST_H

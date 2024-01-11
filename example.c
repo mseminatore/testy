@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "test.h"
 
-int test_main(int argc, char *argv[]) {
+void test_main(int argc, char *argv[]) {
     // define a module
     MODULE("Sample test");
 
@@ -11,8 +11,7 @@ int test_main(int argc, char *argv[]) {
     // display a comment
     COMMENT("test addition...");
 
-    // execute a unit test
+    // execute some unit tests
     TEST(((1 + 1) == 2));
-
-    return 0;
+    TESTEX("This test fails", 0);
 }

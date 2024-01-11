@@ -39,7 +39,7 @@ Below is a minimalist example of usage:
 ```c
 #include "test.h"
 
-int test_main(int argc, char *argv[]) {
+void test_main(int argc, char *argv[]) {
     // define a module
     MODULE("Sample test");
 
@@ -49,10 +49,9 @@ int test_main(int argc, char *argv[]) {
     // display a comment
     COMMENT("test addition...");
 
-    // execute a unit test
+    // execute some unit tests
     TEST(((1 + 1) == 2));
-
-    return 0;
+    TESTEX("This test fails", 0);
 }
 
 ```
@@ -68,15 +67,17 @@ Begin test pass...
 Module Sample test...
 
 Testing suite Basic...
-    test addition...
+	test addition...
 	1 test case: ((1 + 1) == 2) ✓
+	2 test case: This test fails ❌
+	Test failed at [example.c:16]
 
 Test pass completed.
-Evaluated 1 modules, 1 suites, and 1 tests with 0 failed test case(s).
+Evaluated 1 modules, 1 suites, and 2 tests with 1 failed test case(s).
 ```
 
 # testy is compatible with CMake/CTest and Github CI
 
-The library returns 0 on a successful test pass. On a test case failure it
+The library `main()` returns 0 on a successful test pass. On a test case failure it
 returns the number of failures. These simple steps allow for tests to be run by
 the CMAKE CTEST tool and used with Github CI workflows.
