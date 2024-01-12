@@ -38,7 +38,7 @@ EQUAL_ARRAY(a, b) | tests for equality of two arrays using memcmp
 NOT_EQUAL_ARRAY(a, b) | tests for inequality of two arrays
 EQUAL_EPSILON(a, b) | tests that fabs(a - b) > epsilon
 
-Below is a minimalist example of usage:
+Below is a simple example of usage.
 
 ```c
 #include "test.h"
@@ -60,7 +60,7 @@ void test_main(int argc, char *argv[]) {
 
 ```
 
-And here is sample output from running the example above. 
+And here is the output from running the example code above.
 
 ```
 Begin test pass...
@@ -69,7 +69,7 @@ Module Sample test...
 
 Testing suite Basic...
 	test addition...
-	1 test case: ((1 + 1) == 2) ✓
+	1 test case: ((1 + 1) == 2) <code style="color:green">✓</code>
 	2 test case: This test fails ❌
 	Test failed at [example.c:16]
 
@@ -77,8 +77,47 @@ Test pass completed.
 Evaluated 1 modules, 1 suites, and 2 tests with 1 failed test case(s).
 ```
 
+In a larger example, your `test_main()`
+would typically call other functions that encapsulate different test modules
+and suites that are collections of tests.
+
+```C
+#include "test.h"
+
+static void test_foo()
+{
+    // define a test suite
+    SUITE("Foo");
+
+    // display a comment
+    COMMENT("testing foo functions...");
+
+    // execute some unit tests
+    TEST(TRUE == initFoo());
+}
+
+static void test_bar()
+{
+    // define a test suite
+    SUITE("Bar");
+
+    // execute some unit tests
+    TEST(barFunction());
+}
+
+void test_main(int argc, char *argv[]) {
+    // define a module
+    MODULE("Foo and Bar testing");
+
+    test_foo();
+
+    test_bar();
+}
+
+```
+
 # testy is compatible with CMake/CTest and Github CI
 
 The library `main()` returns 0 on a successful test pass. On a test case failure it
 returns the number of failures. These simple steps allow for tests to be run by
-the CMAKE CTEST tool and used with Github CI workflows.
+the CMake CTest tool and used with Github CI workflows.
