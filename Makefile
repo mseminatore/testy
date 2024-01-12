@@ -1,7 +1,7 @@
 # get arch name
 ARCH = $(shell uname -m)
-TARGET = example
-OBJS = example.o test_main.o 
+TARGET = example_test
+OBJS = example_test.o test_main.o 
 DEPS = test.h
 CFLAGS += -g -O2 #-DNDEBUG
 
