@@ -8,6 +8,10 @@
 #ifndef __TEST_H
 #define __TEST_H
 
+#ifdef __cplusplus
+    extern "C" {
+#endif
+
 #include <assert.h>
 #include <stdio.h>
 
@@ -87,5 +91,9 @@ extern int test_failures;
 extern int test_modules;
 
 void test_main(int argc, char* argv[]);
+
+#ifdef __cplusplus
+    }
+#endif
 
 #endif // #ifndef __TEST_H
