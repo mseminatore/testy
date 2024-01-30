@@ -1,5 +1,7 @@
 # testy is a simple test framework
 
+![GitHub License](https://img.shields.io/github/license/mseminatore/testy)
+
 As a software developer I found that I knew little about test frameworks. 
 Like many developers I all too often relied on others to test my code.
 I have many projects which I revisit periodically. In order to minimize the
