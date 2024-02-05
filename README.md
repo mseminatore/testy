@@ -1,6 +1,7 @@
 # testy is a simple test framework
 
 ![GitHub License](https://img.shields.io/github/license/mseminatore/testy)
+[![CodeQL](https://github.com/mseminatore/testy/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/mseminatore/testy/actions/workflows/github-code-scanning/codeql)
 
 As a software developer I found that I knew little about test frameworks. 
 Like many developers I all too often relied on others to test my code.
