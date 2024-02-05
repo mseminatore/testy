@@ -8,17 +8,18 @@ I have many projects which I revisit periodically. In order to minimize the
 chances of introducing new bugs into old code bases I decided that I needed
 to build up a collection of unit tests.
 
-To do that, I needed to learn about Unit testing and choose a framework. I
-explored many of the available testing frameworks. What I found was that, 
-while very capable, many were much larger and more complex than my simple and
-straightforward needs.
+To do that, I needed to learn about [unit testing](https://en.wikipedia.org/wiki/Unit_testing)
+and choose a framework. I explored many of the available testing frameworks. 
+What I found was that, while very capable, many frameworks were much larger 
+and more complex than my simple and straightforward needs. I wanted something
+that was both easy to learn and easy to integrate into new and existing projects.
 
 The `testy` framework attempts to offer a reasonable balance between 
-testing functionality and complexity. I've used this now for several projects
-and am sharing it in the hopes that it may be useful to others.
+testing functionality and complexity. I've used this now with several C/C++ projects.
+I am sharing it in the hopes that it may be useful to others.
 
-> Note: If your console supports VT100 terminal congtrol escape sequences then the 
-> output will use color highlighting.
+> Note: If your console supports VT100 terminal control escape sequences then the 
+> output will provide color highlighting.
 
 # testy examples
 
