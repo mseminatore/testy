@@ -2,7 +2,7 @@
 
 ![GitHub License](https://img.shields.io/github/license/mseminatore/testy)
 [![CodeQL](https://github.com/mseminatore/testy/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/mseminatore/testy/actions/workflows/github-code-scanning/codeql)
-[![CMake](https://github.com/mseminatore/testy/actions/workflows/cmake-single-platform.yml/badge.svg)](https://github.com/mseminatore/testy/actions/workflows/cmake-single-platform.yml)
+[![CMake](https://github.com/mseminatore/testy/actions/workflows/cmake.yml/badge.svg)](https://github.com/mseminatore/testy/actions/workflows/cmake.yml)
 
 
 As a software developer I found that I knew little about test frameworks. 
