@@ -39,10 +39,10 @@ COMMENT(str) | outputs a comment in test output
 MODULE(str) | name the start of a new module
 SUITE(str) | name the start of a new test suite
 TEST(pred) | assert-like test case, outputs pred as text
-TEXTEX(msg, pred) | assert-like test of pred, outputs msg as text
+TESTEX(msg, pred) | assert-like test of pred, outputs msg as text
 EQUAL_ARRAY(a, b) | tests for equality of two arrays using memcmp
 NOT_EQUAL_ARRAY(a, b) | tests for inequality of two arrays
-EQUAL_EPSILON(a, b) | tests that fabs(a - b) > epsilon
+EQUAL_EPSILON(a, b) | tests whether fabs(a - b) < epsilon
 
 Below is a simple example of usage.
 
