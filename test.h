@@ -59,7 +59,7 @@
 #define BEGIN_TESTS()   printf("%sBegin test pass%s...\n", TERM_BRIGHT_MAGENTA, TERM_RESET)
 #define TEST(s)         printf("\t%d test case: %s" #s "%s ", ++test_number, TERM_CYAN, TERM_RESET); TEST_ASSERT(s, __FILE__, __LINE__)
 #define TESTEX(msg,s)   printf("\t%d test case: %s" msg "%s ", ++test_number, TERM_CYAN, TERM_RESET); TEST_ASSERT(s, __FILE__, __LINE__)
-#define COMMENT(s)      printf("\t%s" s "%s\n", TERM_BRIGHT_BLUE, TERM_RESET)
+#define COMMENT(s)      printf("\n\t%s" s "%s\n", TERM_BRIGHT_BLUE, TERM_RESET)
 #define SUITE(s)        printf("\nTesting suite %s" s "%s...\n", TERM_YELLOW, TERM_RESET); test_suites++
 #define MODULE(s)       printf("\nModule %s" s "%s...\n", TERM_BRIGHT_MAGENTA, TERM_RESET); test_modules++
 #define END_TESTS()     printf("\n%sTest pass completed%s.\nEvaluated %s%d%s modules, %s%d%s suites, and %s%d%s tests with %s%d%s failed test case(s).\n\n", TERM_BRIGHT_MAGENTA, TERM_RESET, TERM_GREEN, test_modules, TERM_RESET, TERM_GREEN, test_suites, TERM_RESET, TERM_GREEN, test_number, TERM_RESET, test_failures ? TERM_BRIGHT_RED : TERM_GREEN, test_failures, TERM_RESET); return test_failures
