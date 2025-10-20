@@ -10,5 +10,9 @@ add_test(NAME example_test COMMAND example_test)
 # add the includes
 include_directories(${PROJECT_SOURCE_DIR})
 
+# add the library
+add_library(testy STATIC test_main.c)
+
 # add the executables
-add_executable(example_test example_test.c test_main.c)
+add_executable(example_test example_test.c )
+target_link_libraries(example_test PRIVATE testy)
