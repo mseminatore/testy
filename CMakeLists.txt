@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.10)
 
 # set the project name and version
-project(example_test VERSION 1.0 LANGUAGES C)
+project(test_framework VERSION 1.0 LANGUAGES C)
 
 # testing
 enable_testing()
