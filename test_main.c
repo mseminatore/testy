@@ -14,6 +14,7 @@ int test_number		= 0;
 int test_failures 	= 0;
 int test_suites 	= 0;
 int test_modules 	= 0;
+int test_skipped    = 0;
 
 //------------------------------------------------------
 // enable VT100 support in pre Win11 console window
