@@ -93,7 +93,7 @@
 #define COMMENT(s)      printf("\n\t%s" s "%s\n", TERM_BRIGHT_BLUE, TERM_RESET)
 #define SUITE(s)        do { printf("\nTesting suite %s" s "%s...\n", TERM_YELLOW, TERM_RESET); test_suites++; } while(0)
 #define MODULE(s)       do { printf("\nModule %s" s "%s...\n", TERM_BRIGHT_MAGENTA, TERM_RESET); test_modules++; } while(0)
-#define SKIP_TEST(msg)  do { printf("\t%s" msg "%s %sSKIPPED%s\n", TERM_CYAN, TERM_RESET, TERM_YELLOW, TERM_RESET); test_skipped++; } while(0)
+#define SKIP_TEST(s)  do { printf("\t%s" #s "%s %sSKIPPED%s\n", TERM_CYAN, TERM_RESET, TERM_YELLOW, TERM_RESET); test_skipped++; } while(0)
 #define END_TESTS()     do { printf("\n%sTest pass completed%s.\nEvaluated %s%d%s modules, %s%d%s suites, and %s%d%s tests with %s%d%s failed and %s%d%s skipped test case(s).\n\n", TERM_BRIGHT_MAGENTA, TERM_RESET, TERM_GREEN, test_modules, TERM_RESET, TERM_GREEN, test_suites, TERM_RESET, TERM_GREEN, test_number, TERM_RESET, test_failures ? TERM_BRIGHT_RED : TERM_GREEN, test_failures, TERM_RESET, TERM_YELLOW, test_skipped, TERM_RESET); return test_failures; } while(0)
 
 #ifndef TRUE
