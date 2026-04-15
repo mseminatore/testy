@@ -1,5 +1,5 @@
 //--------------------------------------------------------
-// Simple C/C++ test framework
+// Simple CTest CI/CD compatible C/C++ test framework
 // 
 // Copyright 2022 Mark Seminatore. All rights reserved.
 //--------------------------------------------------------
@@ -108,15 +108,19 @@
 #   define EPSILON 1e-5
 #endif
 
-#define EQUAL_EPSILON(a, b)     (fabs((a) - (b)) < EPSILON)
-
+#ifndef EQUAL_EPSILON
+#    define EQUAL_EPSILON(a, b)     (fabs((a) - (b)) < EPSILON)
+#endif
+    
 #ifndef ARRAY_SIZE
 #	define ARRAY_SIZE(a)        (sizeof(a)/sizeof(a[0]))
 #endif
 
-#define EQUAL_ARRAY(a, b)       !memcmp((a), (b), sizeof(a))
-#define NOT_EQUAL_ARRAY(a, b)   !EQUAL_ARRAY(a, b)
-
+#ifndef EQUAL_ARRAY
+#    define EQUAL_ARRAY(a, b)       !memcmp((a), (b), sizeof(a))
+#    define NOT_EQUAL_ARRAY(a, b)   !EQUAL_ARRAY(a, b)
+#endif
+    
 extern int test_number;
 extern int test_suites;
 extern int test_failures;
