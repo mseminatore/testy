@@ -43,6 +43,7 @@ TESTEX(msg, pred) | assert-like test of pred, outputs msg as text
 EQUAL_ARRAY(a, b) | tests for equality of two arrays using memcmp
 NOT_EQUAL_ARRAY(a, b) | tests for inequality of two arrays
 EQUAL_EPSILON(a, b) | tests whether fabs(a - b) < epsilon
+SKIP_TEST(str) | skip test and report
 
 Below is a simple example of usage.
 
@@ -62,6 +63,9 @@ void test_main(int argc, char *argv[]) {
     // execute some unit tests
     TEST(((1 + 1) == 2));
     TESTEX("This test fails", 0);
+
+	// skip a failing test
+	SKIP_TEST(NULL != failing_test());
 }
 
 ```
@@ -83,7 +87,7 @@ Test pass completed.
 Evaluated 1 modules, 1 suites, and 2 tests with 1 failed test case(s).
 ```
 
-In a larger example, your `test_main()`
+In a larger project, your `test_main()`
 would typically call other functions that encapsulate different test modules
 and suites that are collections of tests.
 
